@@ -1,4 +1,6 @@
-/! prix rond pour tous; border gift supp; btn kdo supp bg; ajouter une ombre convexe sous kdo
+/! todo remplacer img nav par txt html;
+/! var global à externaliser; todo créer mixin style_db
+- $code = '37WB'
 doctype transitional
 html xmlns="http://www.w3.org/1999/xhtml" 
   head
@@ -8,26 +10,46 @@ html xmlns="http://www.w3.org/1999/xhtml"
       td img {display: block;}
   body bgcolor="#ffffff" link="#333333" style="margin:0;" vlink="#666666"
     / global container 
-    table bgcolor="#CCCCCC" border="0" cellpadding="0" cellspacing="0" width="100%" 
+    table bgcolor="#F0ECE4" border="0" cellpadding="0" cellspacing="0" width="100%" 
       tr
         td
           /! header document 
-          table border="0" cellpadding="0" cellspacing="0" width="710" align="center"
+          table border="0" cellpadding="0" cellspacing="0" width="750" align="center"
             tr
-              td align="center" style="margin: 0; padding-top: 5px; padding-bottom: 5px;"
+              td style="padding-top: 5px; padding-bottom: 5px;"
                 p align="center" style="margin: 0; padding: 0; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #333333;" 
                   | La nouvelle collection est arrivée ! Découvrez la vite et recevez votre cadeau gratuit !
-                  br/
+                  br
                   span style="font-family:Verdana, Geneva, sans-serif;font-size:10px;margin:0;" 
                     | Si la page ne s'affiche pas correctement consultez la
                     a href="/link/online-version" style="color: #333333;" target="_blank" 
                       strong version en ligne
       tr
         td
+          /! corners
+          table border="0" cellpadding="0" cellspacing="0" align="center" width="750" 
+            tr
+              td valign="top"
+                table border="0" cellpadding="0" cellspacing="0"
+                  tr
+                    td
+                      img src="images/container_top-left.png" alt=""
+                  tr
+                    td bgcolor="#FFFFFF" height="5"
+              td width="100%" align="center" bgcolor="#FFFFFF"
+              td valign="top"
+                table border="0" cellpadding="0" cellspacing="0"
+                  tr
+                    td
+                      img src="images/container_top-right.png" alt=""
+                  tr
+                    td bgcolor="#FFFFFF" height="5"
+      tr
+        td
           table border="0" cellpadding="0" cellspacing="0" width="710" align="center"
             tr
-              /! container content
-              td bgcolor="#FFFFFF" style="padding-top: 20px; padding-right: 20px; padding-left: 20px;"
+              /! container content; padding-top @corners 
+              td bgcolor="#FFFFFF" style="padding-right: 20px; padding-left: 20px;"
                 /! header news
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                   tr
@@ -37,7 +59,10 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td
                             img#header_logo alt="" border="0" height="58" name="header_logo" src="images/header_logo.png" width="292"
                           td align="right" style="padding-bottom: 14px; " valign="bottom" width="418" 
-                            span style="font-family: Georgia, Times, serif; font-size: 16px; font-style: italic; font-weight: bold; color: #A12020;"  Votre code cadeau : XXXX
+                            span style="font-family: Georgia, Times, serif; font-size: 16px; font-style: italic; font-weight: bold; color: #A12020;"
+                              | Votre code cadeau : 
+                              span style="font-family: Arial, sans-serif;"
+                                = $code
                 /! vertical space 10px
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                   tr
@@ -77,7 +102,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 /! vertical space 10px
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
                   tr
-                    td height="10" 
+                    td height="10"
                 /! Gift zone
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
                   tr
@@ -85,35 +110,39 @@ html xmlns="http://www.w3.org/1999/xhtml"
                       table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                         tr
                           td
-                            img#giftcsoa alt="" border="0" height="250" name="giftcsoa" src="images/gift-csoa.png" width="480"
+                            img#giftcsoa alt="" border="0" height="250" name="giftcsoa" src="images/gift-csoa.jpg" width="480"
                           td
-                            img#giftcmc alt="" border="0" height="250" name="giftcmc" src="images/gift-cmc.png" width="230"
-                /! vertical space 14px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                            img#giftcmc alt="" border="0" height="250" name="giftcmc" src="images/gift-cmc.jpg" width="230"
+                /! gift => bottom shadow
+                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
                   tr
-                    td height="14" width="710" 
+                    td 
+                      img#gift_b-shadow alt="" border="0" name="gift_b-shadow" src="images/gift_b-shadow.png"
                 /! gift aera button
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
                   tr
                     td align="center" height="36" width="350" 
                       span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 21px; color: #932725;" 
-                        | > J’en profite
-                        span style="font-size: 16px; font-weight: normal; "  avec le code XXXX
-                /! highlights btn
+                        |> J’en profite 
+                        span style="font-size: 16px; font-weight: normal; "
+                          | avec le code 
+                          = $code
+                / highlights btn
                 / table border="0" cellpadding="0" cellspacing="0" width="710"
                 /   tr
                 /     td
                 /     td align="center" height="1" bgcolor="#932725" width="260"
                 /     td
+
                 /! vertical space 20px
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                   tr
                     td height="20" width="710" 
-                /! gift bottom shadow
+                /! gift shaded style separator
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                   tr
                     td
-                      img#giftbottomshadow alt="" border="0" height="20" name="giftbottomshadow" src="images/gift-bottom-shadow.png" width="710"
+                      img#gift_bottom-shadow alt="" border="0" height="20" name="gift_bottom-shadow" src="images/bottom-shadow.png" width="710"
                 /! vertical space 10px
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"  
                   tr
@@ -149,7 +178,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                                         table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
                                           tr
                                             td
-                                              img#pck1x3_1 alt="" border="0" height="202" name="pck1x3_1" src="images/pck1x3_1.png" width="228"
+                                              img#pck1x3_1 alt="" border="0" height="202" name="pck1x3_1" src="images/pck1x3_1.jpg" width="228"
                                           tr
                                             td
                                               table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
@@ -177,7 +206,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                                         table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
                                           tr
                                             td
-                                              img#pck2x3_1 alt="" border="0" height="202" name="pck2x3_1" src="images/pck2x3_1.png" width="228"
+                                              img#pck2x3_1 alt="" border="0" height="202" name="pck2x3_1" src="images/pck2x3_1.jpg" width="228"
                                           tr
                                             td
                                               table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
@@ -205,7 +234,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                                         table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
                                           tr
                                             td
-                                              img#pck3x3_1 alt="" border="0" height="202" name="pck3x3_1" src="images/pck3x3_1.png" width="228"
+                                              img#pck3x3_1 alt="" border="0" height="202" name="pck3x3_1" src="images/pck3x3_1.jpg" width="228"
                                           tr
                                             td
                                               table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
@@ -293,7 +322,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710" 
                   tr
                     td
-                      img#giftbottomshadow_ alt="" border="0" height="20" src="images/gift-bottom-shadow.png" width="710"
+                      img#footer_bottom-shadow alt="" border="0" height="20" src="images/bottom-shadow.png" width="710"
                 /! vertical space
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
                   tr
@@ -322,10 +351,10 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td height="102" valign="middle" width="230" 
                             span style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #922625; " 
                               | SUR INTERNET
-                              br/
+                              br
                               span style="font-size: 14px; font-weight: normal; " 
                                 | Rendez-vous sur
-                                br/
+                                br
                                 | www.ideeshomme.fr
                           td bgcolor="#ffffff" width="10" 
                           td style="padding-right: 10px; padding-left: 8px; " 
@@ -333,18 +362,18 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td height="102" valign="middle" width="230" 
                             span style="font-family: Arial, sans-serif; font-size: 16px; color: #922625; font-weight: bold; " 
                               | PAR TÉLÉPHONE
-                              br/
+                              br
                               span style="font-size: 14px; font-weight: normal; "
                                 |au 
                               | 0892 461 461
                               sup style="line-height: 0; "
                                 | **
-                              br/
+                              br
                               span style="font-size: 14px; font-weight: normal; " 
                                 | du lundi au vendredi de 7h à 20h
-                                br/
+                                br
                                 | samedi de 9h à 19h
-                                br/
+                                br
                 /! footer vertical space
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
                   tr
@@ -372,7 +401,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td height="54" valign="top" width="110" 
                             span style="line-height: 144%; font-family: Arial, sans-serif; font-size: 14px; color: #922625; " 
                               | SATISFAIT OU
-                              br/
+                              br
                               | REMBOURSÉ
                           td bgcolor="#ffffff" width="10" 
                           td style="padding-right: 10px; padding-left: 8px; " 
@@ -380,7 +409,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td height="54" valign="top" width="110" 
                             span style="line-height: 144%; font-family: Arial, sans-serif; font-size: 14px; color: #922625; " 
                               | LIVRAISON
-                              br/
+                              br
                               | À LA CARTE
                           td bgcolor="#ffffff" width="10" 
                           td style="padding-right: 10px; padding-left: 8px; " 
@@ -388,7 +417,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td height="54" valign="top" width="110" 
                             span style="line-height: 144%; font-family: Arial, sans-serif; font-size: 14px; color: #922625; " 
                               | PAIEMENT
-                              br/
+                              br
                               | SÉCURISÉ
                           td bgcolor="#ffffff" width="10" 
                           td style="padding-right: 10px; padding-left: 8px; " 
@@ -396,7 +425,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td height="54" valign="top" width="110" 
                             span style="line-height: 144%; font-family: Arial, sans-serif; font-size: 14px; color: #922625; " 
                               | GARANTIE
-                              br/
+                              br
                               | 1 AN
           /!  footer shaded style separator
           table border="0" cellpadding="0" cellspacing="0" width="710" align="center"
@@ -410,12 +439,12 @@ html xmlns="http://www.w3.org/1999/xhtml"
 
                 p align="left" style="font-family:Verdana, Geneva, sans-serif;font-size:11px;color:#555555;margin:0;text-align:justify;" 
                   | * Votre cadeau vous est offert gratuitement, en fonction des stocks disponibles. En cas de rupture de stocks, CONFORT ET VIE se réserve le droit de remplacer votre cadeau par un article de valeur équivalente ou supérieure. Si vous désirez obtenir uniquement le cadeau, veuillez faire votre demande par courrier uniquement à CONFORT ET VIE - BP 20100 - 7700 MOUSCRON, en joignant le montant des frais de port (6,99€ en Carte bancaire) pour la participation aux frais de mise à disposition, les frais de traitement étant les mêmes que pour une commande livrée à domicile. Le Cadeau sera expédié dans un délai de 3 mois maximum. Photos non contractuelles.
-                  br/
-                  br/
+                  br
+                  br
                   a href="link/modalites"
                     | ** Voir les modalités d'attribution du l'opération
-                  br/
-                  br/
+                  br
+                  br
                 div style="text-align: center; " 
                   font style="font-family:Verdana, Geneva, sans-serif;font-size:11px;color:#555555" 
                     a> href="/link/cgv" style="color:#333333;" target="_blank" 
