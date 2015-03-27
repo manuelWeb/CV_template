@@ -1,6 +1,9 @@
 /! todo remplacer img nav par txt html;
 /! var global à externaliser; todo créer mixin style_db
 - $code = '37WB'
+- $tab1 = 750; - $tab2 = $tab1-40
+/ - $tab2 = tab1-30
+/ - $tab2 = '710'
 doctype transitional
 html xmlns="http://www.w3.org/1999/xhtml" 
   head
@@ -14,7 +17,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
       tr
         td
           /! header document 
-          table border="0" cellpadding="0" cellspacing="0" width="750" align="center"
+          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab1
             tr
               td style="padding-top: 5px; padding-bottom: 5px;"
                 p align="center" style="margin: 0; padding: 0; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #333333;" 
@@ -27,7 +30,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
       tr
         td
           /! corners
-          table border="0" cellpadding="0" cellspacing="0" align="center" width="750" 
+          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab1 
             tr
               td valign="top"
                 table border="0" cellpadding="0" cellspacing="0"
@@ -46,9 +49,10 @@ html xmlns="http://www.w3.org/1999/xhtml"
                     td bgcolor="#FFFFFF" height="5"
       tr
         td
-          table border="0" cellpadding="0" cellspacing="0" width="710" align="center"
+          /! tab content
+          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab2
             tr
-              /! container content; padding-top @corners 
+              /! container content; padding-top => cf corners 
               td bgcolor="#FFFFFF" style="padding-right: 20px; padding-left: 20px;"
                 /! header news
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
@@ -64,14 +68,14 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               span style="font-family: Arial, sans-serif;"
                                 = $code
                 /! vertical space 10px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710" 
+                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
                   tr
                     td height="9"
                 /! nav
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
+                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
                         tr
                           td
                             img#nav_1 alt="" border="0" height="24" name="nav_1" src="images/nav_1.png" width="160"
@@ -85,14 +89,14 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td
                             img#nav_4 alt="" border="0" height="24" name="nav_4" src="images/nav_4.png" width="206"
                 /! vertical space 14px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
+                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
                   tr
                     td height="14" 
                 /! title => Vos cadeaux du mois
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
                   tr
                     td
-                      table border="0" cellpadding="0" cellspacing="0" width="710" 
+                      table border="0" cellpadding="0" cellspacing="0" width=$tab2 
                         tr
                           td bgcolor="#FFFFFF" 
                           td align="center" bgcolor="#932725" height="40" width="470" 
@@ -100,7 +104,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               | Vos cadeaux du mois
                           td  bgcolor="#FFFFFF" 
                 /! vertical space 10px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
+                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
                   tr
                     td height="10"
                 /! Gift zone
@@ -110,16 +114,16 @@ html xmlns="http://www.w3.org/1999/xhtml"
                       table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
                         tr
                           td
-                            img#giftcsoa alt="" border="0" height="250" name="giftcsoa" src="images/gift-csoa.jpg" width="480"
+                            img#giftcsoa alt="" border="0" name="giftcsoa" src="images/gift-csoa.jpg" height="250" width="480"
                           td
-                            img#giftcmc alt="" border="0" height="250" name="giftcmc" src="images/gift-cmc.jpg" width="230"
+                            img#giftcmc alt="" border="0" name="giftcmc" src="images/gift-cmc.jpg" height="250" width="230"
                 /! gift => bottom shadow
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
+                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
                   tr
                     td 
                       img#gift_b-shadow alt="" border="0" name="gift_b-shadow" src="images/gift_b-shadow.png"
                 /! gift aera button
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710"
+                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
                   tr
                     td align="center" height="36" width="350" 
                       span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 21px; color: #932725;" 
@@ -355,7 +359,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               span style="font-size: 14px; font-weight: normal; " 
                                 | Rendez-vous sur
                                 br
-                                | www.ideeshomme.fr
+                                | www.confortetvie.fr
                           td bgcolor="#ffffff" width="10" 
                           td style="padding-right: 10px; padding-left: 8px; " 
                             img#fooZ1_phone alt="" border="0" height="102" name="fooZ1_phone" src="images/fooZ1_phone.png" width="102"
@@ -382,7 +386,8 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="710" 
                   tr
                     td bgcolor="#C3B191" height="30" valign="middle" align="center"  
-                      span style="font-family: Arial, sans-serif; font-size: 18px; color: #212121;"  Profitez des garanties idée homme
+                      span style="font-family: Arial, sans-serif; font-size: 18px; color: #212121;"
+                        | Profitez des garanties Confort &amp; Vie
                   tr
                     td
                       img#footerZ1_titleshadow_ alt="" border="0" height="10" name="footerZ1_titleshadow_" src="images/footerZ1_title-shadow_.png" width="710"
