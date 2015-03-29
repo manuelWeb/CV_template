@@ -1,3 +1,4 @@
+/ see https://github.com/slim-template/slim#attribute-shortcuts#user-content-attribute-shortcuts
 /! todo remplacer img nav par txt html; vérif hotmail ipad; line-height sous outlook; 
 /! var global à externaliser; crea var img>td>gutter
 /  lancer la compile : slimrb -p template-CV.V3.html.slim template-CV.V3.html
@@ -30,9 +31,10 @@ html xmlns="http://www.w3.org/1999/xhtml"
                   | La nouvelle collection est arrivée ! Découvrez la vite et recevez votre cadeau gratuit !
                   br
                   span style="font-family:Verdana, Geneva, sans-serif;font-size:10px;margin:0;" 
-                    | Si la page ne s'affiche pas correctement consultez la
+                    | Si la page ne s'affiche pas correctement consultez la 
                     a href="/link/online-version" style="color: #333333;" target="_blank" 
-                      strong version en ligne
+                      strong
+                        | version en ligne
       tr
         td
           /! corners
@@ -68,7 +70,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                         tr
                           td
                             img#header_logo alt="" border="0" width="292" height="58" name="header_logo" src="images/header_logo.png" style=$db
-                          td align="right" style="padding-bottom: 14px; " valign="bottom" width="418" 
+                          td align="right" style="padding-bottom: 10px; " valign="bottom" width="418" 
                             span style="font-family: Georgia, Times, serif; font-size: 16px; font-style: italic; font-weight: bold; color: #A12020;"
                               | Votre code cadeau : 
                               span style="font-family: Arial, sans-serif;"
