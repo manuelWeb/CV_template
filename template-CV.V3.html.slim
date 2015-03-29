@@ -1,17 +1,19 @@
-/! todo remplacer img nav par txt html;
-/! var global à externaliser; todo créer mixin style_db
+/! todo remplacer img nav par txt html; vérif hotmail ipad; line-height sous outlook; 
+/! var global à externaliser; crea var img>td>gutter
 /  lancer la compile : slimrb -p template-CV.V3.html.slim template-CV.V3.html
 - $code = '37WB'
 /! layout
 - $pad_ext = 20; $pt = 'padding-top: '; $pr = 'padding-right: '; $pb = 'padding-bottom: '; $pl = 'padding-left: '
 - $db = 'display: block;'
+/! table
 - $tab1 = 750; $tab2 = $tab1 - (2 * $pad_ext);
-/ - $tab2 = tab1-30
-/ - $tab2 = '710'
+- $tabborder0 = '0" cellpadding="0" cellspacing="0';
+- $gutter = 10;
+
 doctype transitional
 html xmlns="http://www.w3.org/1999/xhtml" 
   head
-    meta content="text/html; charset=utf-8" http-equiv="Content-Type" /
+    meta content="text/html; charset=utf-8" http-equiv="Content-Type"
     title V3
     css:
       td img {display: block;}
@@ -21,7 +23,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
       tr
         td
           /! header document 
-          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab1
+          table border==($tabborder0) align="center" width=$tab1
             tr
               td style="padding-top: 5px; padding-bottom: 5px;"
                 p align="center" style="margin: 0; padding: 0; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #333333;" 
@@ -34,10 +36,10 @@ html xmlns="http://www.w3.org/1999/xhtml"
       tr
         td
           /! corners
-          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab1 
+          table border==($tabborder0) align="center" width=$tab1 
             tr
               td valign="top"
-                table border="0" cellpadding="0" cellspacing="0"
+                table border==($tabborder0)
                   tr
                     td
                       img border="0" src="images/container_top-left.png" alt="" style=$db
@@ -45,7 +47,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                     td bgcolor="#FFFFFF" height="5"
               td width="100%" align="center" bgcolor="#FFFFFF"
               td valign="top"
-                table border="0" cellpadding="0" cellspacing="0"
+                table border==($tabborder0)
                   tr
                     td
                       img border="0" src="images/container_top-right.png" alt="" style=$db
@@ -54,15 +56,15 @@ html xmlns="http://www.w3.org/1999/xhtml"
       tr
         td
           /! tab content
-          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab2
+          table border==($tabborder0) align="center" width=$tab2
             tr
               /! container content; padding-top => cf corners 
               td bgcolor="#FFFFFF" style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
                 /! header news
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
+                table border==($tabborder0) bgcolor="#ffffff" 
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                      table border==($tabborder0) bgcolor="#ffffff"
                         tr
                           td
                             img#header_logo alt="" border="0" width="292" height="58" name="header_logo" src="images/header_logo.png" style=$db
@@ -72,14 +74,14 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               span style="font-family: Arial, sans-serif;"
                                 = $code
                 /! vertical space 10px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td height="9"
                 /! nav
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
+                table border==($tabborder0) bgcolor="#ffffff" 
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                      table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                         tr
                           td
                             img#nav_1 alt="" border="0" height="24" name="nav_1" src="images/nav_1.png" width="160" style=$db
@@ -93,41 +95,44 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           td
                             img#nav_4 alt="" border="0" height="24" name="nav_4" src="images/nav_4.png" width="206" style=$db
                 /! vertical space 14px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td height="14" 
                 /! title => Vos cadeaux du mois
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                table border==($tabborder0) bgcolor="#ffffff"
                   tr
                     td
-                      table border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                      table border==($tabborder0) width=$tab2 
                         tr
-                          td bgcolor="#FFFFFF" 
-                          td align="center" bgcolor="#932725" height="40" width="470" 
+                          td bgcolor="#FFFFFF" align="right"
+                            img#title_corner-left alt="" border="0" name="title_corner-left" src="images/title_corner-left.png" style=$db
+                          / w:470 - 10bd
+                          td bgcolor="#932725" height="40" width="460" align="center"  
                             span style="font-family: Georgia, Times, serif; font-size: 30px; font-style: italic; font-weight: bold; color: #FFFFFF;"
                               | Vos cadeaux du mois
-                          td  bgcolor="#FFFFFF" 
+                          td  bgcolor="#FFFFFF" align="left" 
+                            img#title_corner-right alt="" border="0" name="title_corner-right" src="images/title_corner-right.png" style=$db
                 /! vertical space 10px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td height="10"
                 /! Gift zone
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                table border==($tabborder0) bgcolor="#ffffff"
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
+                      table border==($tabborder0) bgcolor="#ffffff" 
                         tr
                           td
                             img#giftcsoa alt="" border="0" name="giftcsoa" src="images/gift-csoa.jpg" height="250" width="480" style=$db
                           td
                             img#giftcmc alt="" border="0" name="giftcmc" src="images/gift-cmc.jpg" height="250" width="230" style=$db
                 /! gift => bottom shadow
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td 
                       img#gift_b-shadow alt="" border="0" name="gift_b-shadow" src="images/footerZ1_title-shadow.png" style=$db
                 /! gift aera button
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td align="center" height="36" width="350" 
                       span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 21px; color: #932725;" 
@@ -136,30 +141,30 @@ html xmlns="http://www.w3.org/1999/xhtml"
                           | avec le code 
                           = $code
                 / highlights btn
-                / table border="0" cellpadding="0" cellspacing="0" width="710"
+                / table border==($tabborder0) width="710"
                 /   tr
                 /     td
                 /     td align="center" height="1" bgcolor="#932725" width="260"
                 /     td
 
                 /! vertical space 20px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td height="20" 
                 /! gift shaded style separator
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td
                       img#gift_bottom-shadow alt="" border="0" height="20" name="gift_bottom-shadow" src="images/bottom-shadow.png" style=$db
                 /! vertical space 10px
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td height="10"
                 /! title => Les nouveautes du mois
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
+                table border==($tabborder0) bgcolor="#ffffff" 
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                      table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                         tr
                           td bgcolor="#ffffff" 
                           td align="center" bgcolor="#F96107" height="40" width="470" 
@@ -167,29 +172,29 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               | Les nouveautés du mois
                           td bgcolor="#ffffff" 
                 /! vertical space
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2  
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2  
                   tr
                     td bgcolor="#ffffff" height="10" 
                 /! pckx3 module
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                table border==($tabborder0) bgcolor="#ffffff"
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                      table border==($tabborder0) bgcolor="#ffffff"
                         tr
                           td
-                            table border="0" cellpadding="0" cellspacing="0" 
+                            table border==$tabborder0 
                               tr
                                 td align="center" valign="bottom" bgcolor="#FFFFFF" width="228" height="228" style="padding: 1px; " 
-                                  table border="0" cellpadding="0" cellspacing="0" width="100%" 
+                                  table border==($tabborder0) width="100%" 
                                     tr
                                       td align="center" bgcolor="#FFFFFF" height="228" style="font-family: sans-serif; " 
-                                        table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
+                                        table  border==($tabborder0) bgcolor="#ffffff" width="228" 
                                           tr
                                             td
                                               img#pck1x3_1 alt="" border="0" height="202" name="pck1x3_1" src="images/pck1x3_1.jpg" width="228" style=$db
                                           tr
                                             td
-                                              table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
+                                              table  border==($tabborder0) bgcolor="#ffffff" width="228" 
                                                 tr
                                                   td
                                                     img#pck1x3_2_1 alt="" border="0" height="26" name="pck1x3_2_1" src="images/pck1x3_2_1.png" width="138" style=$db
@@ -203,21 +208,21 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               tr
                                 td align="center" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #59594C; "
                                   | Bon maintien et un grand confort du pied pour un bien-être idéal.
-                          td height="230" width="10" 
+                          td width=$gutter 
                           td
-                            table border="0" cellpadding="0" cellspacing="0" 
+                            table border==$tabborder0 
                               tr
                                 td align="center" bgcolor="#FFFFFF" height="228" style="padding: 1px; " valign="bottom" width="228" 
-                                  table border="0" cellpadding="0" cellspacing="0" width="100%" 
+                                  table border==($tabborder0) width="100%" 
                                     tr
                                       td align="center" bgcolor="#FFFFFF" height="228" style="font-family: sans-serif; " 
-                                        table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
+                                        table  border==($tabborder0) bgcolor="#ffffff" width="228" 
                                           tr
                                             td
                                               img#pck2x3_1 alt="" border="0" height="202" name="pck2x3_1" src="images/pck2x3_1.jpg" width="228" style=$db
                                           tr
                                             td
-                                              table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
+                                              table  border==($tabborder0) bgcolor="#ffffff" width="228" 
                                                 tr
                                                   td
                                                     img#pck2x3_2_1 alt="" border="0" height="26" name="pck2x3_2_1" src="images/pck2x3_2_1.png" width="138" style=$db
@@ -231,21 +236,21 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               tr
                                 td align="center" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #59594C; "
                                   | Garnies de tissu éponge, sur un matelassage moelleux.
-                          td height="230" width="10" 
+                          td width=$gutter 
                           td
-                            table border="0" cellpadding="0" cellspacing="0" 
+                            table border==$tabborder0 
                               tr
                                 td align="center" bgcolor="#FFFFFF" height="228" style="padding: 1px; " valign="bottom" width="228" 
-                                  table border="0" cellpadding="0" cellspacing="0" width="100%" 
+                                  table border==($tabborder0) width="100%" 
                                     tr
                                       td align="center" bgcolor="#FFFFFF" height="228" style="font-family: sans-serif; " 
-                                        table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
+                                        table border==($tabborder0) bgcolor="#ffffff" width="228" 
                                           tr
                                             td
                                               img#pck3x3_1 alt="" border="0" height="202" name="pck3x3_1" src="images/pck3x3_1.jpg" width="228" style=$db
                                           tr
                                             td
-                                              table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="228" 
+                                              table border==($tabborder0) bgcolor="#ffffff" width="228" 
                                                 tr
                                                   td
                                                     img#pck3x3_2_1 alt="" border="0" height="26" name="pck3x3_2_1" src="images/pck3x3_2_1.png" width="138" style=$db
@@ -260,29 +265,29 @@ html xmlns="http://www.w3.org/1999/xhtml"
                                 td align="center" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #59594C; "
                                   | Comme un parfum de Canebière dans la salle de bains.
                 /! vertical space between the modules pckx3 and pckx2
-                table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#ffffff" width=$tab2
+                table border==($tabborder0) align="center" bgcolor="#ffffff" width=$tab2
                   tr
                     td height="30"
                 /! pckx2 module
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                table border==($tabborder0) bgcolor="#ffffff"
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                      table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                         tr
                           td
-                            table border="0" cellpadding="0" cellspacing="0" 
+                            table border==($tabborder0)
                               tr
                                 td align="center" bgcolor="#FFFFFF" height="348" style="padding: 1px; " valign="bottom" width="348" 
-                                  table border="0" cellpadding="0" cellspacing="0" width="100%" 
+                                  table border==($tabborder0) width="100%" 
                                     tr
                                       td align="center" bgcolor="#FFFFFF" height="348" style="font-family: sans-serif; " 
-                                        table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="348" 
+                                        table border==($tabborder0) bgcolor="#ffffff" width="348" 
                                           tr
                                             td
                                               img#pck1X2_1 alt="" border="0" height="312" name="pck1X2_1" src="images/pck1X2_1.png" width="348" style=$db
                                           tr
                                             td
-                                              table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="348" 
+                                              table border==($tabborder0) bgcolor="#ffffff" width="348" 
                                                 tr
                                                   td
                                                     img#pck1X2_2_1 alt="" border="0" height="36" name="pck1X2_2_1" src="images/pck1X2_2_1.png" width="238" style=$db
@@ -295,21 +300,21 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               tr
                                 td align="center" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #59594C; "
                                   | Euros et Francs mettent du soleil dans vos calculs !
-                          td height="350" width="10" 
+                          td width=$gutter 
                           td
-                            table border="0" cellpadding="0" cellspacing="0" 
+                            table border==$tabborder0 
                               tr
                                 td align="center" bgcolor="#FFFFFF" height="348" style="padding: 1px; " valign="bottom" width="348" 
-                                  table border="0" cellpadding="0" cellspacing="0" width="100%" 
+                                  table border==($tabborder0) width="100%" 
                                     tr
                                       td align="center" bgcolor="#FFFFFF" height="348" style="font-family: sans-serif; " 
-                                        table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="348" 
+                                        table border==($tabborder0) bgcolor="#ffffff" width="348" 
                                           tr
                                             td
                                               img#pck2X2_1 alt="" border="0" height="312" name="pck2X2_1" src="images/pck2X2_1.png" width="348" style=$db
                                           tr
                                             td
-                                              table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="348" 
+                                              table border==($tabborder0) bgcolor="#ffffff" width="348" 
                                                 tr
                                                   td
                                                     img#pck2X2_2_1 alt="" border="0" height="36" name="pck2X2_2_1" src="images/pck2X2_2_1.png" width="238" style=$db
@@ -323,20 +328,20 @@ html xmlns="http://www.w3.org/1999/xhtml"
                                 td align="center" style="font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; color: #59594C; "
                                   | Prenez votre douche assis.
                 /! vertical space
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td height="28"
                 /! shaded style separator
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td
                       img#footer_bottom-shadow alt="" border="0" height="20" src="images/bottom-shadow.png" width="710" style=$db
                 /! vertical space
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td height="16"
                 /! footer zone1 title + shadow
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td bgcolor="#C3B191" height="30" valign="middle" align="center" 
                       span style="font-family: Arial, sans-serif; font-size: 18px; color: #FFFFFF;"
@@ -345,14 +350,14 @@ html xmlns="http://www.w3.org/1999/xhtml"
                     td
                       img#footerZ1_titleshadow alt="" border="0" height="10" name="footerZ1_titleshadow" src="images/footerZ1_title-shadow.png" width="710" style=$db
                 /! footer vertical space
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td bgcolor="#ffffff" height="10" 
                 /! footer zone1
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" 
+                      table border==($tabborder0) bgcolor="#ffffff" 
                         tr
                           td style="padding-right: 10px; padding-left: 8px; " 
                             img#fooZ1_internet alt="" border="0" height="102" name="fooZ1_internet" src="images/fooZ1_internet.png" width="102" style=$db
@@ -383,11 +388,11 @@ html xmlns="http://www.w3.org/1999/xhtml"
                                 | samedi de 9h à 19h
                                 br
                 /! footer vertical space
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td bgcolor="#ffffff" height="28" 
                 /!  footer zone2 title + shadow
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2 
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2 
                   tr
                     td bgcolor="#C3B191" height="30" valign="middle" align="center"  
                       span style="font-family: Arial, sans-serif; font-size: 18px; color: #FFFFFF;"
@@ -396,14 +401,14 @@ html xmlns="http://www.w3.org/1999/xhtml"
                     td
                       img#footerZ1_titleshadow_ alt="" border="0" height="10" name="footerZ1_titleshadow_" src="images/footerZ1_title-shadow_.png" width="710" style=$db
                 /!  footer zone2 vertical space
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td bgcolor="#ffffff" height="5" 
                 /!  footer zone2
-                table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width=$tab2
+                table border==($tabborder0) bgcolor="#ffffff" width=$tab2
                   tr
                     td style="padding-bottom: 4px;"
-                      table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                      table border==($tabborder0) bgcolor="#ffffff"
                         tr
                           td style="padding-right: 10px; padding-left: 8px; " 
                             img#fooZ2_pict1 alt="" border="0" height="54" name="fooZ2_pict1" src="images/fooZ2_pict1.png" width="42" style=$db
@@ -437,12 +442,12 @@ html xmlns="http://www.w3.org/1999/xhtml"
                               br
                               | 1 AN
           /!  footer shaded style separator
-          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab2
+          table border==($tabborder0) align="center" width=$tab2
             tr
               td
                 img#b-shad_transp alt="" border="0" height="20" src="images/b-shad_transp.png" style=$db
           /!  legal notice
-          table border="0" cellpadding="0" cellspacing="0" align="center" width=$tab2
+          table border==($tabborder0) align="center" width=$tab2
             tr
               td style="padding-top:0; padding-bottom: 30px;" 
 
