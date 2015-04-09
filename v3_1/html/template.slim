@@ -3,12 +3,11 @@
 /! crea var img>td>gutter
 == Slim::Template.new('var/_cssdesk.slim').render
 == Slim::Template.new('var/_layout.slim').render
-
 doctype transitional
 html xmlns="http://www.w3.org/1999/xhtml" 
   head
     meta content="text/html; charset=utf-8" http-equiv="Content-Type"
-    title V3
+    title V3_1
     / css:  
     style type="text/css"
       == $body + $table + $tabFL + $td + $td_img + $img + $a + $a_img + $ReadMsgBody + $ExternalClass + $ExternalClass_ALL + $a_Tel
@@ -19,37 +18,11 @@ html xmlns="http://www.w3.org/1999/xhtml"
       tr
         td
           /! header document 
-          table border==($tabborder0) align="center" width=$tab1
-            tr
-              td style="padding-top: 5px; padding-bottom: 5px;"
-                p align="center" style="margin: 0; padding: 0; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #333333;" 
-                  | La nouvelle collection est arrivée ! Découvrez la vite et recevez votre cadeau gratuit !
-                  br
-                  span style="font-family:Verdana, Geneva, sans-serif;font-size:10px;margin:0;" 
-                    | Si la page ne s'affiche pas correctement consultez la 
-                    a href="/link/online-version" style="color: #333333;" target="_blank" 
-                      strong
-                        | version en ligne
+          == Slim::Template.new('partial/_document-header.slim').render
       tr
         td
-          /! corners
-          table border==($tabborder0) align="center" width=$tab1 
-            tr
-              td valign="top"
-                table border==($tabborder0)
-                  tr
-                    td
-                      img border="0" src="images/container_top-left.png" alt="" style=$db
-                  / tr
-                    / td bgcolor="#FFFFFF" height="5"
-              td width="100%" align="center" bgcolor="#FFFFFF"
-              td valign="top"
-                table border==($tabborder0)
-                  tr
-                    td
-                      img border="0" src="images/container_top-right.png" alt="" style=$db
-                  / tr
-                    / td bgcolor="#FFFFFF" height="5"
+          /! top corners
+          == Slim::Template.new('partial/_corner-top.slim').render
       tr
         td
           /! tab content
