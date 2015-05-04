@@ -36,14 +36,8 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 /! title => Vos cadeaux du mois
                 == Slim::Template.new('partial/_giftTitle.slim').render
                 
-                /! vertical space 10px
-                == Slim::Template.new('partial/_vSpace10.slim').render
-                
                 /! Gift zone
                 == Slim::Template.new('partial/_gift.slim').render
-                
-                /! vertical space 20px
-                == Slim::Template.new('partial/_vSpace20.slim').render
                  
                 /! shaded separator
                 == Slim::Template.new('partial/_separator-transp.slim').render
@@ -54,32 +48,17 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 /! title => Les nouveautes du mois
                 == Slim::Template.new('partial/_newsOfMonthTitle.slim').render
 
-                /! vertical space
-                == Slim::Template.new('partial/_vSpace10.slim').render
-
                 /! pckx3
                 == Slim::Template.new('partial/_pckx3.slim').render
-                
-                /! vertical space 
-                == Slim::Template.new('partial/_vSpace30.slim').render
 
                 /! pckx2 module
                 == Slim::Template.new('partial/_pckx2.slim').render
 
-                /! vertical space
-                == Slim::Template.new('partial/_vSpace30.slim').render
-
                 /! shaded separator
                 == Slim::Template.new('partial/_separator-transp.slim').render
 
-                /! vertical space
-                == Slim::Template.new('partial/_vSpace14.slim').render
-
                 /! footer zone1 title
                 == Slim::Template.new('partial/_fooZone1-title.slim').render
-
-                /! vertical space
-                == Slim::Template.new('partial/_vSpace10.slim').render
                 
                 /! footer zone1
                 == Slim::Template.new('partial/_fooZone1.slim').render

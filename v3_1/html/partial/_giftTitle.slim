@@ -1,13 +1,12 @@
-table border==($tabborder0) bgcolor="#ffffff"
+table border==$tabborder0
   tr
-    td
+    td style="padding-bottom: 10px"
       table border==($tabborder0) width=$tab2 
         tr
-          td bgcolor="#FFFFFF" align="right"
-            img#title_corner-left alt="" border="0" name="title_corner-left" src="images/title_corner-left.png" style=$db
-          / w:470 - 10bd
-          td bgcolor="#932725" height="40" width="460" align="center"  
+          td align="right"
+            img alt="" border="0" src="images/title_corner-left.png" style=$db
+          td align="center" bgcolor="#932725" height="40" width=$column*8+$gutter*7  
             span style="font-family: Georgia, Times, serif; font-size: 30px; font-style: italic; font-weight: bold; color: #FFFFFF;"
               | Vos cadeaux du mois
-          td  bgcolor="#FFFFFF" align="left" 
-            img#title_corner-right alt="" border="0" name="title_corner-right" src="images/title_corner-right.png" style=$db
+          td align="left" 
+            img alt="" border="0" src="images/title_corner-right.png" style=$db
