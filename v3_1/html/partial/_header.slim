@@ -3,10 +3,12 @@ table border==$tabborder0
     td
       table border==($tabborder0)
         tr
-          td style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          td
             img alt="" border="0" width=$column*12+$gutter*11 height="25" src="images/header_s1.png" style=$db
         tr
-          td bgcolor="#FFFFFF" style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          td
             table border==($tabborder0)
               tr
                 td 
@@ -14,10 +16,11 @@ table border==$tabborder0
                 td 
                   img alt="" border="0" width=$column*7+$gutter*7 height="110" src="images/header_s2_2.jpg" style=$db
         tr
-          td width=$column*12+$gutter*11 bgcolor="#FFFFFF" style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
-            table border==($tabborder0) width="100%"
+          / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+          td width=$column*12+$gutter*11
+            table border==($tabborder0) bgcolor="#FFFFFF" width="100%"
               tr
-                td align="left"
+                td align="left" style="padding-left: 10px;"
                   / img#header_s3_1
                   font style="font-family: Arial, sans-serif; font-size: 18px; font-style: italic; color: #A01F1F; "
                     | Vous rendre plus facile la vie de tous les jours

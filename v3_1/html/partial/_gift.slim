@@ -4,9 +4,11 @@ table border==($tabborder0)
       table border==($tabborder0)
         tr
           td
-            img#giftcsoa alt="" border="0" name="giftcsoa" src="images/gift-csoa.jpg" height="250" width="480" style=$db
+            a target="_blank" href==$gift[0]
+              img#giftcsoa alt="" border="0" name="giftcsoa" src="images/gift-csoa.jpg" height="250" width="480" style=$db
           td
-            img#giftcmc alt="" border="0" name="giftcmc" src="images/gift-cmc.jpg" height="250" width="230" style=$db
+            a target="_blank" href==$gift[0]
+              img#giftcmc alt="" border="0" name="giftcmc" src="images/gift-cmc.jpg" height="250" width="230" style=$db
 /! gift => bottom shadow
 table border==($tabborder0) width=$tab2
   tr
@@ -18,11 +20,11 @@ table border==($tabborder0)
     td height="10"
   tr
     td valign="middle" align="center" bgcolor="#FFFFFF" height="40" width=$column*6+$gutter*5 style="border: 1px solid #932725;"
-      a href="/gif-btn" target="_blank" style="text-decoration: none; "
+      a target="_blank" href==$gift[0] style="text-decoration: none; "
         span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 21px; color: #932725;" 
           |> J’en profite 
           span style="font-size: 16px; font-weight: normal; "
             | avec le code 
             = $code
   tr
-    td height="10"
+    td height="20"
