@@ -13,23 +13,20 @@ html xmlns="http://www.w3.org/1999/xhtml"
       == $body + $table + $tabFL + $td + $td_img + $img + $a + $a_img + $ReadMsgBody + $ExternalClass + $ExternalClass_ALL + $a_Tel
 
   body link="#333333" vlink="#666666" style="margin:0;"
-    / global container 
-    table border==($tabborder0) bgcolor="#FAF9F9" width="100%" 
+    / global container // old bg color #F0ECE4
+    table border==($tabborder0) bgcolor="#F9F1F1" width="100%" 
       tr
         td
           /! header document 
           == Slim::Template.new('partial/_document-header.slim').render
       tr
         td
-          /! top corners
-          == Slim::Template.new('partial/_corner-top.slim').render
-      tr
-        td
           /! tab content
           table border==($tabborder0) align="center" width=$tab2
             tr
-              /! container content; padding-top => cf corners 
-              td bgcolor="#FFFFFF" style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;' 
+              /! content container; padding-top => cf corners / bgcolor="#FFFFFF"
+              / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
+              td 
                 /! header news
                 == Slim::Template.new('partial/_header.slim').render
 
@@ -55,7 +52,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 == Slim::Template.new('partial/_vSpace20.slim').render
                  
                 /! shaded separator
-                == Slim::Template.new('partial/_separator.slim').render
+                == Slim::Template.new('partial/_separator-transp.slim').render
 
                 /! vertical space 10px
                 == Slim::Template.new('partial/_vSpace10.slim').render
@@ -79,7 +76,7 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 == Slim::Template.new('partial/_vSpace30.slim').render
 
                 /! shaded separator
-                == Slim::Template.new('partial/_separator.slim').render
+                == Slim::Template.new('partial/_separator-transp.slim').render
 
                 /! vertical space
                 == Slim::Template.new('partial/_vSpace14.slim').render
