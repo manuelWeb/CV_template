@@ -1,11 +1,11 @@
 Retours news cata CV  31/03
--   Accentuer les arrondis ?
+-   Accentuer les arrondis ? > OK
 Header + Cadeaux : 
--   A droite du LOGO : ajouter la couv cata du mois (cheveux gris, rides, sourires, famille = CV)
+-   A droite du LOGO : ajouter la couv cata du mois (cheveux gris, rides, sourires, famille = CV) > OK
 R:\CONFORT ET VIE WEB\CACV\CACV_0315-C168\CACV_0315-C168_FR
 Donc :
-Supprimer les univers
--   Intégrer catalogue Interactif à la TL : http://www.tempsl.com/Newsletters/miroir/Cata_0415/FR/index.htm 
+Supprimer les univers > ?
+-   Intégrer catalogue Interactif à la TL : http://www.tempsl.com/Newsletters/miroir/Cata_0415/FR/index.htm > OK
 Couv CV 0315 : R:\CONFORT ET VIE WEB\CACV\CACV_0315-C168\CACV_0315-C168_FR
 -   Supprimer ligne « Vos cadeaux du mois » , ceci sera dit directement dans l’encart kdo
 
