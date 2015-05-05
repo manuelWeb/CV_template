@@ -11,10 +11,12 @@ table border==$tabborder0
           td
             table border==($tabborder0)
               tr
+                td
+                  a href==($logo) target="_blank"
+                    img alt="" border="0" width=$column*5+$gutter*4 height="110" src="images/header_s2_1.png" style=$db
                 td 
-                  img alt="" border="0" width=$column*5+$gutter*4 height="110" src="images/header_s2_1.png" style=$db
-                td 
-                  img alt="" border="0" width=$column*7+$gutter*7 height="110" src="images/header_s2_2.jpg" style=$db
+                  a href==($cat) target="_blank"
+                    img alt="" border="0" width=$column*7+$gutter*7 height="110" src="images/header_s2_2.jpg" style=$db
         tr
           / style=$pl+$pad_ext.to_s+'px;'+$pr+$pad_ext.to_s+'px;'
           td width=$column*12+$gutter*11
@@ -25,4 +27,5 @@ table border==$tabborder0
                   font style="font-family: Arial, sans-serif; font-size: 18px; font-style: italic; color: #A01F1F; "
                     | Vous rendre plus facile la vie de tous les jours
                 td align="right"
-                  img alt="" border="0" src="images/header_s3_2.png" style=$db
+                  a href==($cat) target="_blank"
+                    img alt="" border="0" src="images/header_s3_2.png" style=$db

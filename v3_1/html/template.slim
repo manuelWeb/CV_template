@@ -1,6 +1,3 @@
-/ render slimrb -p template.slim render.html
-/! todo remplacer img nav par txt html; vérif hotmail ipad; line-height sous outlook; todo var $pckX3imgW = (tab1-($gutter*2))/3 sur td parente
-/! crea var img>td>gutter
 == Slim::Template.new('var/_link.slim').render
 == Slim::Template.new('var/_pcktxt.slim').render
 == Slim::Template.new('var/_cssdesk.slim').render
@@ -33,19 +30,16 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 == Slim::Template.new('partial/_header.slim').render
 
                 /! nav
-                == Slim::Template.new('partial/_nav.slim').render
+                / == Slim::Template.new('partial/_nav.slim').render
 
                 /! title => Vos cadeaux du mois
-                == Slim::Template.new('partial/_giftTitle.slim').render
+                / == Slim::Template.new('partial/_giftTitle.slim').render
                 
                 /! Gift zone
                 == Slim::Template.new('partial/_gift.slim').render
                  
                 /! shaded separator
                 == Slim::Template.new('partial/_separator-transp.slim').render
-
-                /! vertical space 10px
-                == Slim::Template.new('partial/_vSpace10.slim').render
 
                 /! title => Les nouveautes du mois
                 == Slim::Template.new('partial/_newsOfMonthTitle.slim').render
@@ -64,15 +58,9 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 
                 /! footer zone1
                 == Slim::Template.new('partial/_fooZone1.slim').render
-
-                /! vertical space
-                == Slim::Template.new('partial/_vSpace30.slim').render
                 
                 /!  footer zone2 title
                 == Slim::Template.new('partial/_fooZone2-title.slim').render
-
-                /!  vertical space
-                == Slim::Template.new('partial/_vSpace5.slim').render
 
                 /!  footer zone2
                 == Slim::Template.new('partial/_fooZone2.slim').render
