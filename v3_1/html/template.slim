@@ -1,3 +1,4 @@
+- bgcolor = "#F9F1F1";
 == Slim::Template.new('var/_link.slim').render
 == Slim::Template.new('var/_pcktxt.slim').render
 == Slim::Template.new('var/_cssdesk.slim').render
@@ -11,9 +12,9 @@ html xmlns="http://www.w3.org/1999/xhtml"
     style type="text/css"
       == $body + $table + $tabFL + $td + $td_img + $img + $a + $a_img + $ReadMsgBody + $ExternalClass + $ExternalClass_ALL + $a_Tel
 
-  body link="#333333" vlink="#666666" style="margin:0;"
+  body link="#333333" vlink="#666666" style="margin: 0; padding: 0; " bgcolor==(bgcolor)
     / global container // old bg color #F0ECE4
-    table border==($tabborder0) bgcolor="#F9F1F1" width="100%" 
+    table border==($tabborder0) bgcolor==(bgcolor) width="100%"
       tr
         td
           /! header document 
