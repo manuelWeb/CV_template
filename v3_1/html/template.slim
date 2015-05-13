@@ -31,19 +31,16 @@ html xmlns="http://www.w3.org/1999/xhtml"
                 == Slim::Template.new('partial/_header.slim').render
 
                 /! nav
-                / == Slim::Template.new('partial/_nav.slim').render
+                == Slim::Template.new('partial/_nav.slim').render
 
                 /! title => Vos cadeaux du mois
                 / == Slim::Template.new('partial/_giftTitle.slim').render
                 
                 /! Gift zone
                 == Slim::Template.new('partial/_gift.slim').render
-                 
-                /! shaded separator
-                == Slim::Template.new('partial/_separator-transp.slim').render
 
                 /! title => Les nouveautes du mois
-                == Slim::Template.new('partial/_newsOfMonthTitle.slim').render
+                == Slim::Template.new('partial/_selectionDuMois.slim').render
 
                 /! pckx3
                 == Slim::Template.new('partial/_pckx3.slim').render

@@ -5,10 +5,20 @@ table border==($tabborder0)
         tr
           td
             a target="_blank" href==$gift[0]
-              img alt="" border="0" src="images/gift-csoa.jpg" height="330" width="355" style=$db
+              img alt="" border="0" src="images/gift-csoa.jpg" width="355" height="330" style=$db
           td
-            a target="_blank" href==$gift[0]
-              img alt="" border="0" src="images/gift-cmc.jpg" height="330" width="355" style=$db
+            table border==($tabborder0)
+              tr
+                td
+                  a target="_blank" href==$gift[0]
+                    img alt="" border="0" src="images/gift-cmc.png" width="355" height="286" style=$db
+              tr
+                td height="44" bgcolor="#FFFFFF" valign="top" align="center"
+                  font style="font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 16px; color: #932725;"
+                    | Votre code cadeau 
+                    span
+                      = $code
+
 /! gift => bottom shadow
 table border==($tabborder0) width=$tab2
   tr
@@ -17,18 +27,4 @@ table border==($tabborder0) width=$tab2
 /! gift aera button
 table border==($tabborder0) width==($tabArray[0])
   tr
-    td height="10"
-table border==($tabborder0) align="center"
-  tr
-    td
-    td valign="middle" align="center" bgcolor="#FFFFFF" height="40" width=$column*6+$gutter*5 style="border: 1px solid #932725; "
-      a target="_blank" href==$gift[0] style="text-decoration: none; "
-        span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 21px; color: #932725;" 
-          |> J’en profite 
-          span style="font-size: 16px; font-weight: normal; "
-            | avec le code 
-            = $code
-    td
-table border==($tabborder0) width==($tabArray[0])
-  tr
-    td height="20"
+    td height="24"
